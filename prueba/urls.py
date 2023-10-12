@@ -18,12 +18,14 @@ from django.contrib import admin
 from django.urls import path
 from prueba.views import saludo
 from prueba.views import despedida
-from prueba.views import fecha,calculoedad
+from prueba.views import fecha,calculoedad,cursoC,cursoCss
 # las rutas llamarlas del views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('saludo/',saludo),
     path('despedida/',despedida),
     path('fecha/',fecha),
-    path('edad/<int:edad>/<int:agno>', calculoedad)
+    path('edad/<int:edad>/<int:agno>', calculoedad),
+    path('cursoC/', cursoC),
+    path('cursoCss/', cursoCss)
 ]
