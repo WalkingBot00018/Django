@@ -54,7 +54,7 @@ ROOT_URLCONF = 'prueba.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ["C:/xampp/htdocs/django/Django/prueba/plantillas"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

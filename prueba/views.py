@@ -1,16 +1,29 @@
 from django.http import HttpResponse
 import datetime
 from django.template import Template, Context
+from django.template.loader import get_template
+
+
+class Persona(object):
+    def __init__(self,nombre,apellido):
+        self.nombre=nombre
+        self.apellido=apellido
+        
 
 def saludo(request):
-    nombre="juan"
-    apellido="lopez"
+    p1=Persona("Ruben","Lozano")
+    # nombre="juan"
+    # apellido="lopez"
+
+    temasdelcurso=["plantillas","modelos","formularios","vistas","despliegue"]
     ahora=datetime.datetime.now()
-    doc_externo = open("C:/xampp/htdocs/Django/prueba/prueba/plantillas/miplantilla.html")
-    plt = Template(doc_externo.read())
-    doc_externo.close()
-    ctx = Context({"nombre_persona": nombre,"apellido_persona":apellido,"momento_actual":ahora})
-    documento = plt.render(ctx)
+    # doc_externo = open("C:/xampp/htdocs/django/Django/prueba/plantillas/miplantilla.html")
+    # plt = Template(doc_externo.read())
+    # doc_externo.close()
+    doc_externo=get_template('miplantilla.html')
+
+    # ctx = Context({"nombre_persona": p1.nombre,"apellido_persona":p1.apellido,"momento_actual":ahora, "temas":temasdelcurso})
+    documento = doc_externo.render({"nombre_persona": p1.nombre,"apellido_persona":p1.apellido,"momento_actual":ahora, "temas":temasdelcurso})
     return HttpResponse(documento)
 
 def despedida(request):

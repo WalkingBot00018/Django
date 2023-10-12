@@ -5,7 +5,43 @@
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
             nueva plantilla
         </h1>
-        <p>el nombre del profesor es: {{ nombre_persona }} {{ apellido_persona }}</p>
+
+        
+        <!-- comentarios en plantillas -->
+        {% comment %} 
+         diseñador ignora esta parte #!
+         l
+        {% endcomment %}
+
+        <!-- condicionales en plantilla -->
+        {% if nombre_persona == 'Ruben' %}
+            <p>el cursos lo imparte el profesor titular</p>
+        
+
+        {% else %}
+            <p>el curos lo imparte el suplente</p>
+        
+        {% endif %}
+
+
+        <p>el nombre del profesor es: {{ nombre_persona|upper }} {{ apellido_persona|lower }}</p>
         <p>estamos viendo el teme de las plantillas a d&iacute;a: {{ momento_actual.day }}</p>
+        <p><strong>temas del curso: </strong></p>
+        <p>
+            <!-- bucle for en una plantilla -->
+            <ul>
+                {% if temas %}
+                    {% for eltema in temas %}
+
+                    <!-- filtros | -->
+                        <li>{{eltema|first|upper}}</li> 
+
+                    {% endfor %}
+                {% else %}
+                    <p>no hay elementos que mostrar</p>
+                {% endif %}
+            </ul>
+
+        </p>
     </body>
 </html>
