@@ -1,0 +1,143 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REGISTRO</title>
+    <link rel="stylesheet" href="form_class/formulario.css">
+</head>
+<style>
+    :root{
+  --colortextos: #49454567;
+}
+*,
+::before,
+::after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  font-family: sans-serif;
+  background: #0F2027;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  height: 650px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+h1{
+  text-align: center;
+  font-weight: 700;
+}
+form{
+  background: #fff;
+  padding: 40px 0;
+  box-shadow: 0 0 6px 0 rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+}
+.form{
+  width: 100%;
+  margin: auto;
+}
+form .grupo{
+  position: relative;
+  margin: 45px;
+}
+input{
+  background: none;
+  color: bisque;
+  font-size: 18px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid var(--colortextos);
+}
+input:focus{
+  outline: none;
+  color: #0F2027;
+}
+
+label{
+  color: var(--colortextos);
+  font-size: 16px;
+  position: absolute;
+  left: 5px;
+  top: 10px;
+  transition: 0.5s ease-in-out all;
+  pointer-events: none;
+}
+
+input:focus~label,
+input:valid~label
+{
+  top: -14px;
+  font-size: 12px;
+  color: aqua;
+}
+.barrita{
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+.barrita::before{
+  content: "";
+  height: 2px;
+  width: 0;
+  bottom: 0;
+  position: absolute;
+  background: linear-gradient(to right, #0a38d1, #0af030, #444344);
+  transition: 0.3s ease width;
+  left: 0;
+}
+
+input:focus~.barrita::before{
+  width: 100%;
+}
+button{
+  font-family: sans-serif;
+  background: #1F1C2C;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #928DAB, #1F1C2C);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #928DAB, #1F1C2C); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border: none;
+  display: block;
+  width: 80%;
+  margin: 10px auto;
+  color: #fff;
+  height: 40px;
+  font-size: 16px;
+}
+</style>
+<body>
+    <form action="" method="POST" id="form">
+        <div class="form">
+            <h1>REGISTRO</h1>
+            <div class="grupo">
+                <input type="text" name="" id="nombre" required> <span class="barrita"></span>
+                <label for="">NOMBRE</label>
+            </div>
+            
+                <div class="grupo">
+                    <input type="email" name="" id="nombre" required> <span class="barrita"></span>
+                    <label for="">Email</label>
+            </div>
+                
+                <div class="grupo">
+                    <input type="password" name="" id="nombre" required> <span class="barrita"></span>
+                    <label for="">contraseña</label>
+                </div>
+                <div class="grupo">
+                    <input type="text" name="" id="nombre" required> <span class="barrita"></span>
+                    <label for="">confirmacion</label>
+                </div>
+                <button type="submit">Registrar</button>
+        </div>
+    </form>
+    
+</body>
+</html>

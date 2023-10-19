@@ -49,4 +49,8 @@ def calculoedad(request, agno):
     documento = f"<html><body><h2>En el año {agno} tendrás {edadFutura} años</h2></body></html>"
     return HttpResponse(documento)
 
+def registro(request):
+    return render(request,"registro.html", {})
+
+
 
